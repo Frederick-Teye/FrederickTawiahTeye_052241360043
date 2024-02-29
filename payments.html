@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* @media screen and (min-width: 600px) {
+            footer {
+                    position: fixed;
+                    bottom: 0;
+            }
+        } */
+
+        /* registration form */
+        main form {
+            width: 60%;
+            border: 4px solid #262faf;
+            border-radius: 15px;
+            margin: 25px auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, auto);
+            justify-items: center;
+            text-align: initial;
+        }
+
+        main form h1 {
+            grid-row: 1 / 2;
+            grid-column: 1 / 3;
+            color: #272949;
+        }
+
+        main form .visa, 
+        main form .momo {
+            grid-row: 2 / 3;
+        }
+
+        #visaDetails,
+        #momoDetails {
+            grid-row: 3 / 4;
+            grid-column: 1 / 3;
+            margin: 15px 0;
+        }
+
+        .submit {
+            grid-row: 4 / 5;
+            grid-column: 1 / 3;
+            width: 40%;
+            background-image: linear-gradient(to right, #272949, #262faf);
+            color: white;
+            border-radius: 8px;
+            padding: 7px 0px;
+            margin-bottom: 20px;
+        }
+
+        input[type=text],
+        input[type=tel],
+        input[type=number],
+        input[type=date] {
+            width: 80%;
+            padding: 5px 0px 5px 5px;
+        }
+
+        main form h1,
+        .select-image,
+        .submit {
+            justify-self: center;
+        }
+
+        main form div {
+            width: 70%;
+        }
+
+        main form div div {
+            width: 100%;
+        }
+        </style>
+    <title>Payments</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container top-nav">
+            <div>
+                <a href="index.html" class="logo">Kumasi Technical University</a>
+            </div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label class="menu">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dempartments.html">Departments</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="timetables.html">Timetables</a></li>
+                <li><a href="registration.html">Registration</a></li>
+            </ul>
+    
+        </div>
+    </header>
+    <main>
+        <form id="paymentForm">
+            <h1>Make Your Payment Here</h1>
+            <div class="visa">
+                <label>
+                    <input type="radio" name="paymentOption" value="visa" onchange="handlePaymentOption()"> Pay with Visa
+                </label>
+            </div>
+            <div class="momo">
+                <label>
+                    <input type="radio" name="paymentOption" value="momo" onchange="handlePaymentOption()"> Pay with Mobile Money
+                </label>
+            </div>
+
+            <br>
+        
+            <div id="visaDetails" style="display: none;">
+                <div>
+                    <label for="student_number">Student number:</label>
+                    <br>
+                    <input type="number" name="student_number" id="student_number">
+                </div>
+                <div>
+                    <br>
+                    <label for="cardNumber">Card Number:</label>
+                    <br>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                </div>
+                <div>
+                    <br>
+                    <label for="expiryDate">Expiry Date:</label>
+                    <br>
+                    <input type="text" id="expiryDate" name="expiryDate">
+                </div>
+            </div>
+        
+            <div id="momoDetails" style="display: none;">
+                <label for="student_number">Student number:</label>
+                <br>
+                <input type="number" name="student_number" id="student_number">
+                <div>
+                    <br>
+                    <label for="network">Select Network:</label>
+                    <br>
+                    <select id="network" name="network">
+                        <option value="mtn">MTN</option>
+                        <option value="vodafone">Vodafone</option>
+                        <option value="airtel">Airtel</option>
+                    </select>
+                </div>
+                <div>
+                    <br>
+                    <label for="mobileNumber">Mobile Number:</label>
+                    <br>
+                    <input type="number" id="mobileNumber" name="mobileNumber" placeholder="0244668800">
+                </div>
+                <div>
+                    <br>
+                    <label for="amount">Amount:</label>
+                    <br>
+                    <input type="number" id="payment_amount" name="payment_amount">
+                </div>
+            </div>
+            
+            <br>
+
+            <button type="button" onclick="submitPayment()" class="submit">Make Payment</button>
+        </form>
+        
+        <div id="confirmationMessage" style="display: none;">
+            <!-- Confirmation message will be displayed here -->
+            Payment successful! Thank you.
+        </div>
+
+        <br>
+        <br><hr><br>
+        <a href="https://kstu.edu.gh/node/724" target="_blank">
+            Click here to check amount of your school fees
+        </a>
+        <br><br>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dempartments.html">Departments</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="timetables.html">Timetables</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="office-and-directors">
+                <h2>Offices & Directorates</h2>
+                <ul>
+                    <li>Directorate of Finance</li>
+                    <li>Directorate of Information and Communication Technology</li>
+                    <li>Directorate of Planning and Quality Assurance</li>
+                    <li>Directorate of Procurement</li>
+                    <li>Directorate of Works & Physical Development</li>
+                    <li>Institute of Distance Learning and Continuing Education</li>
+                    <li>Institute of Research, Innovation and Development</li>
+                    <li>International Affairs & Institutional Linkages</li>
+                </ul>
+            </div>
+            <div class="faculties">
+                <h2>Faculties</h2>
+                <ul>
+                    <li>Business School</li>
+                    <li>Faculty of Applied Sciences and Technology</li>
+                    <li>Faculty of Built and Natural Environment</li>
+                    <li>Faculty of Creative Arts and Technology</li>
+                    <li>Faculty of Engineering and Technology</li>
+                    <li>Faculty of Entrepreneurship and Enterprise Development</li>
+                    <li>Faculty of Health Sciences</li>
+                    <li>Graduate School</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact KsTU</h2>
+                <ul>
+                    <li>Location: Kumasi - Ashanti Region, Ghana, W/A</li>
+                    <li>Postal Address: P. O. Box 854, Kumasi</li>
+                    <li>Email: info@kstu.edu.gh</li>
+                    <li>Tel: Admissions: +233(0)322 496 534, +233(0)322 496 380</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="footer">
+        &copy; 2024 - Frederick Teye
+    </div>
+    <script>
+    function handlePaymentOption() {
+            var visaDetails = document.getElementById("visaDetails");
+            var momoDetails = document.getElementById("momoDetails");
+
+            var paymentOption = document.querySelector('input[name="paymentOption"]:checked').value;
+
+            if (paymentOption === "visa") {
+                visaDetails.style.display = "block";
+                momoDetails.style.display = "none";
+            } else if (paymentOption === "momo") {
+                momoDetails.style.display = "block";
+                visaDetails.style.display = "none";
+            }
+        }
+
+        // function submitPayment() {
+        //     // You can perform additional validation or processing here before displaying the confirmation message
+
+        //     // Hide the form and display the confirmation message
+            // document.getElementById("paymentForm").style.display = "none";
+            // document.getElementById("confirmationMessage").style.display = "block";
+        // }
+
+        function submitPayment() {
+                var paymentOption = document.querySelector('input[name="paymentOption"]:checked').value;
+
+                if (paymentOption === "visa") {
+                    var cardNumber = document.getElementById("cardNumber").value.trim();
+                    var expiryDate = document.getElementById("expiryDate").value.trim();
+
+                    // Validate card number (numeric and a valid length)
+                    if (!/^\d+$/.test(cardNumber) || cardNumber.length !== 16) {
+                        alert("Please enter a valid 16-digit card number.");
+                        return;
+                    }
+
+                    // You can add additional validation for the expiry date if needed
+
+                } else if (paymentOption === "momo") {
+                    var mobileNumber = document.getElementById("mobileNumber").value.trim();
+                    var network = document.getElementById("network").value;
+
+                    // Validate mobile number (numeric and 10 characters long)
+                    if (!/^\d+$/.test(mobileNumber) || mobileNumber.length !== 10) {
+                        alert("Please enter a valid 10-digit mobile number.");
+                        return;
+                    }
+
+                    // You can add additional validation for the network if needed
+                }
+
+                // Continue with processing the payment or show confirmation message
+                // ...
+
+                // For demonstration purposes, let's show an alert for successful payment
+                // alert("Payment successful! Thank you.");
+                document.getElementById("paymentForm").style.display = "none";
+                document.getElementById("confirmationMessage").style.display = "block"
+            }
+
+    </script>
+</body>
+
+</html>
