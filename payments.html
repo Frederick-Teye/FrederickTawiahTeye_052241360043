@@ -80,6 +80,16 @@
             main form h1 {
                 text-align: center;
             }
+
+            main form div {
+                padding-left: initial;
+                margin-left: 8%;
+            }
+
+            .visa,
+            .momo {
+                text-align: center;
+            }
         }
         </style>
     <title>Payments</title>
@@ -142,9 +152,11 @@
             </div>
         
             <div id="momoDetails" style="display: none;">
-                <label for="student_number">Student number:</label>
-                <br>
-                <input type="number" name="student_number" id="student_number">
+                <div>
+                    <label for="student_number">Student number:</label>
+                    <br>
+                    <input type="number" name="student_number" id="student_number">
+                </div>
                 <div>
                     <br>
                     <label for="network">Select Network:</label>
