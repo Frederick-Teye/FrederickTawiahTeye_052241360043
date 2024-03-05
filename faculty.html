@@ -14,6 +14,70 @@
         body {
             height: auto;
         }
+
+        /* new styles */
+        .departments {
+            height: 97;
+            padding: 48px 0px;
+            border: 2px solid #272949;
+            color: #272949;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .departments-list {
+            width: 90%;
+            margin: 50px auto 20px
+        }
+
+        .departments-list ol {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding-inline-start: 0px;
+            gap: 15px;
+        }
+
+        .department-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .departments-list li {
+            width: 30%;
+            height: 20%;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .departments-list li:hover {
+            transform: scale(1.05);
+        }
+
+        .department-card span {
+            text-align: center;
+        }
+
+        button {
+            width: 90%;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+        }
+
+        @media screen and (max-width: 600px) {
+            .departments-list li {
+                width: 40%;
+            }
+        }
     </style>
     <title>Faculties</title>
 </head>
@@ -38,19 +102,65 @@
     
         </div>
     </header>
-    <main style="text-align: initial; padding: 20px;">
+    <main style="text-align: initial;">
         <div class="faculties">
-            <h1>Faculties</h1>
-            <ul>
-                <li>Business School</li>
-                <li>Faculty of Applied Sciences and Technology</li>
-                <li>Faculty of Built and Natural Environment</li>
-                <li>Faculty of Creative Arts and Technology</li>
-                <li>Faculty of Engineering and Technology</li>
-                <li>Faculty of Entrepreneurship and Enterprise Development</li>
-                <li>Faculty of Health Sciences</li>
-                <li>Graduate School</li>
-            </ul>
+            <div class="departments">
+                <h1>Faculties</h1>
+            </div>
+            <div class="departments-list">
+                <ol>
+                    <li>
+                        <div class="department-card">
+                            <span>Business School</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Faculty of Applied Sciences and Technology</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Faculty of Built and Natural Environment</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Faculty of Creative Arts and Technology</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Faculty of Engineering and Technology</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Faculty of Entrepreneurship and Enterprise Development
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Faculty of Health Sciences</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Graduate School</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
     </main>
     <footer>
