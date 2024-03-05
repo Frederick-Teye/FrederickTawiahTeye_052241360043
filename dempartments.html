@@ -5,6 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .departments {
+            height: 97;
+            padding: 48px 0px;
+            border: 2px solid #272949;
+            color: #272949;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .departments-list {
+            width: 90%;
+            margin: 50px auto 20px
+        }
+
+        .departments-list ol {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding-inline-start: 0px;
+            gap: 15px;
+        }
+
+        .department-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .departments-list li {
+            width: 30%;
+            height: 20%;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .departments-list li:hover {
+            transform: scale(1.05);
+        }
+
+        .department-card span {
+            text-align: center;
+        }
+
+        button {
+            width: 90%;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+        }
+
+        @media screen and (max-width: 600px) {
+            .departments-list li {
+                width: 40%;
+            }
+        }
+    </style>
     <title>Departments</title>
 </head>
 
@@ -28,135 +92,195 @@
     
         </div>
     </header>
-    <main style="text-align: initial; margin: 20px;">
+    <main style="text-align: initial;">
         <div class="rapper">
             <div class="departments">
                 <h1>Departments</h1>
             </div>
-            <ol>
-                <li>
-                    <span>
-                        Department of Accountancy and Accounting Information Systems
-                    </span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Agropreneurship</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>
-                        Department of Automotive and Agricultural Mechanisation Engineering
-                    </span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Banking Technology and Finance</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Building Technology</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Chemical Engineering</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Civil Engineering</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Computer Science</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Electrical/Electronic Engineering</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Energy and Environmental Engineering</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Entrepreneurship and Finance</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Estate Management</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Fashion Design and Textiles</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Food Technology</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Graphic Design</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>
-                        Department of Hotel, Catering, and Institutional Management
-                    </span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Information Science</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>
-                        Department of Interior Design and Materials Technology
-                    </span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Laboratory Technology</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Liberal Studies</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Management Studies</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Marketing</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Mathematical Sciences</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Mechanical Engineering</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Oil and Gas Engineering</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Pharmaceutical Sciences</span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>
-                        Department of Procurement and Supply Chain Management
-                    </span>
-                    <button>Read More</button>
-                </li>
-                <li>
-                    <span>Department of Statistical Sciences</span>
-                    <button>Read More</button>
-                </li>
-            </ol>
+            <div class="departments-list">
+                <ol>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Department of Accountancy and Accounting Information Systems
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Agropreneurship</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Department of Automotive and Agricultural Mechanisation Engineering
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Banking Technology and Finance</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Building Technology</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Chemical Engineering</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Civil Engineering</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Computer Science</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Electrical/Electronic Engineering</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Department of Energy and Environmental Engineering
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Entrepreneurship and Finance</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Estate Management</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Fashion Design and Textiles</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Food Technology</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Graphic Design</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Department of Hotel, Catering, and Institutional Management
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Information Science</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Department of Interior Design and Materials Technology
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Laboratory Technology</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Liberal Studies</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Management Studies</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Marketing</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Mathematical Sciences</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Mechanical Engineering</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Oil and Gas Engineering</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Pharmaceutical Sciences</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>
+                                Department of Procurement and Supply Chain Management
+                            </span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="department-card">
+                            <span>Department of Statistical Sciences</span>
+                            <button>Read More</button>
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
     </main>
     <footer>
